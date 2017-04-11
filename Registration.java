@@ -1,4 +1,10 @@
 
+/*
+ * this class is for allowing user to register 
+ * allows user to create username and password 
+ * validates their username and password 
+ * this is for the registration use case
+ */
 public class Registration {
 	
 	static String digitPattern = "(?=.*[0-9])";
@@ -12,7 +18,7 @@ public class Registration {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) {//TESTER
 		//String passwd = "aaZZa44@"; 
 	   // String pattern = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}";
 	    //System.out.println(passwd.matches(pattern));
