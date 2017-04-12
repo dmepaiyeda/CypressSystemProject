@@ -11,7 +11,7 @@ public class Profiles
 		passwords = new ArrayList<String>();
 		answers = new ArrayList<String>();
 	}
-	public Profiles(int num_of_users, String[] usernames, String[] some_passwords)
+	public Profiles(int num_of_users, String[] usernames, String[] some_passwords, String[] some_answers)
 	{
 		users = new ArrayList<String>();
 		passwords = new ArrayList<String>();
@@ -19,6 +19,8 @@ public class Profiles
 		for (int i = 0; i < num_of_users; i++)
 		{
 			users.add(usernames[i]);
+			passwords.add(some_passwords[i]);
+			answers.add(some_answers[i]);
 		}
 	}
 	public String getUser(int userNum)
@@ -65,5 +67,16 @@ public class Profiles
 			return false;
 		}
 		return true;
+	}
+	public int answer_is_correct(String user, String answer)
+	{
+		for (int i = 0; i < users.size(); i++)
+		{
+			if (users.get(i).equals(user) && answers.get(i).equals(answer))
+			{
+				return i;
+			}
+		}
+		return -1;
 	}
 }
