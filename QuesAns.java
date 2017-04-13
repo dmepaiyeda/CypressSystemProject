@@ -5,21 +5,46 @@
  */
 public class QuesAns {
 
-  String [ ] questions;
-  String [ ] answers;
-  enum categories;
-  int category_page_y(){}
+  String[] questions = new String[2];
+  String[] answers = new String[2];
+
+  enum categories{
+
+  }
+ // int category_page_y(){}
+
+  /**
+   * Default constructor of the QuesAns Class.
+   */
+  public QuesAns(){
+    questions[0] = "What?";
+    questions[1] = "Where?";
+    answers[0] = "This!";
+    answers[1] = "There!";
+  }
 
   /**
    *
-   * @param gui
+   * @param q
+   * @param a
    */
-  public void retrieveFAQ(GUI gui) {
+  public QuesAns(String[] q, String[] a){
+    q = questions;
+    a = answers;
+
+  }
+
+  /**
+   * Retrieves the FAQ questions and answers from their respective arrays.
+   */
+  public String[] retrieveFAQ() {
 
     //Loads the questions and answers into the JLabels of the GUI
     //TODO
-
-
+    String[] a,b;
+    a=questions;
+    b=answers;
+    return new QuesAns(questions, answers);
   }
 
   /**
