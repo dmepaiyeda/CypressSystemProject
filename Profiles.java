@@ -31,14 +31,14 @@ public class Profiles
 		}
 		return "<invalid user>";
 	}
-	public int validate_user(String username, String password)
+	public int validate_user(String username)
 	{
 		int found = -1;
-		if (!users.isEmpty() && !passwords.isEmpty())
+		if (!users.isEmpty())
 		{
 			for (int i = 0; i < users.size(); i++)
 			{
-				if (users.get(i).equals(username) && passwords.get(i).equals(password))
+				if (users.get(i).equals(username))
 				{
 					found = i;
 				}
@@ -46,27 +46,32 @@ public class Profiles
 		}
 		return found;
 	}
-	public boolean try_validate_user(String username, String password)
+	public boolean try_validate_user(String username, String password, String answer)
 	{
-		if (!users.contains(username) && !passwords.contains(password))
+		if (!users.contains(username))
 		{
 			users.add(username);
 			passwords.add(password);
+			answers.add(answer);
 			return true;
 		}
 		return false;
 	}
 	public boolean change_pass(int userNum, String password)
 	{
-		try
+		if (userNum > -1)
 		{
-			passwords.set(userNum, password);
+			try
+			{
+				passwords.set(userNum, password);
+				return true;
+			}
+			catch (IndexOutOfBoundsException e)
+			{
+				return false;
+			}
 		}
-		catch (IndexOutOfBoundsException e)
-		{
-			return false;
-		}
-		return true;
+		return false;
 	}
 	public int answer_is_correct(String user, String answer)
 	{

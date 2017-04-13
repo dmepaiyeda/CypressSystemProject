@@ -1,59 +1,29 @@
-/**
- * QuesAns Class
- *
- * Manages the frequently asked questions and their answers.
- */
-public class QuesAns {
-
-  String[] questions = new String[2];
-  String[] answers = new String[2];
-
-  enum categories{
-
-  }
- // int category_page_y(){}
-
-  /**
-   * Default constructor of the QuesAns Class.
-   */
-  public QuesAns(){
-    questions[0] = "What?";
-    questions[1] = "Where?";
-    answers[0] = "This!";
-    answers[1] = "There!";
-  }
-
-  /**
-   *
-   * @param q
-   * @param a
-   */
-  public QuesAns(String[] q, String[] a){
-    q = questions;
-    a = answers;
-
-  }
-
-  /**
-   * Retrieves the FAQ questions and answers from their respective arrays.
-   */
-  public String[] retrieveFAQ() {
-
-    //Loads the questions and answers into the JLabels of the GUI
-    //TODO
-    String[] a,b;
-    a=questions;
-    b=answers;
-    return new QuesAns(questions, answers);
-  }
-
-  /**
-   *
-   */
-  public void goToCategory() {
-
-    //TODO
-
-  }
-
+public class QuesAns
+{
+	String[] questions;
+	String[] answers;
+	public QuesAns()
+	{
+		questions = new String[4];
+		answers = new String[4];
+		questions[0] = "What is CYPRESS?";
+		answers[0] = "CYPRESS is the City of Toronto's brand new\nproblem reporting software. Easily report any\ncity-related problems here!";
+		questions[1] = "How do I use CYPRESS?";
+		answers[1] = "Using CYPRESS is easy! Just register a new account,\nlogin, and report your issue!";
+		questions[2] = "Is CYPRESS free to use?";
+		answers[2] = "Yes! CYPRESS is 100% free to use.";
+		questions[3] = "Where can I find more information?";
+		answers[3] = "Visit http://www.toronto.ca/ for more information.";
+	}
+	public String[][] retrieveFAQ()
+	{
+		String[][] output = new String[2][4];
+		output[0] = questions;
+		output[1] = answers;
+		return output;
+	}
+	void goToCategory()
+	{
+		//TODO
+	}
 }
