@@ -693,6 +693,7 @@ public class GUI
 					usernum = -1;
 					labels[8][3].setText("User was successfully logged out");
 					labels[3][3].setText("No user logged in");
+					labels[2][7].setText("No user logged in");
 				}
 			}
 		});
