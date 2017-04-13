@@ -15,6 +15,6 @@ public class Logout {
 */
 
     public boolean Logout() {
-	//TODO
+		if(profile )
     }
 }
